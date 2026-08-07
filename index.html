@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignPalette - 室内设计配色与材质工具集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🎨</span>
+                <h1>DesignPalette</h1>
+            </div>
+            <p class="subtitle">面向室内设计师的专业配色与材质搭配工具</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab active" data-tab="palette">配色方案</button>
+            <button class="tab" data-tab="material">材质搭配</button>
+            <button class="tab" data-tab="preview">场景预览</button>
+        </nav>
+
+        <!-- 配色方案 Tab -->
+        <section id="palette" class="tab-content active">
+            <div class="toolbar">
+                <select id="style-select">
+                    <option value="modern-minimalist">现代极简</option>
+                    <option value="nordic">北欧自然</option>
+                    <option value="japanese-wabi">日式侘寂</option>
+                    <option value="industrial-loft">工业Loft</option>
+                    <option value="luxury-modern">轻奢现代</option>
+                    <option value="mediterranean">地中海风情</option>
+                    <option value="new-chinese">新中式</option>
+                    <option value="mid-century">中古复古</option>
+                </select>
+                <button id="generate-palette" class="btn-primary">生成配色</button>
+            </div>
+            <div id="palette-display" class="palette-grid">
+                <div class="palette-empty">
+                    <p>选择风格，点击"生成配色"开始</p>
+                </div>
+            </div>
+            <div id="palette-info" class="palette-info hidden">
+                <h3>色彩分析</h3>
+                <div class="info-grid"></div>
+            </div>
+        </section>
+
+        <!-- 材质搭配 Tab -->
+        <section id="material" class="tab-content">
+            <div class="toolbar">
+                <select id="room-select">
+                    <option value="living-room">客厅</option>
+                    <option value="bedroom">卧室</option>
+                    <option value="kitchen">厨房</option>
+                    <option value="bathroom">卫生间</option>
+                    <option value="study">书房</option>
+                    <option value="dining">餐厅</option>
+                </select>
+                <select id="budget-select">
+                    <option value="economic">经济型</option>
+                    <option value="mid-range">中档</option>
+                    <option value="luxury">高档</option>
+                </select>
+                <button id="generate-material" class="btn-primary">生成方案</button>
+            </div>
+            <div id="material-display" class="material-grid">
+                <div class="palette-empty">
+                    <p>选择空间和预算，点击"生成方案"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 场景预览 Tab -->
+        <section id="preview" class="tab-content">
+            <div class="preview-area">
+                <div id="preview-canvas" class="preview-canvas">
+                    <div class="palette-empty">
+                        <p>先选择配色方案或材质方案，然后在此预览</p>
+                    </div>
+                </div>
+                <div class="preview-controls">
+                    <p class="preview-hint">选中配色后自动生成空间配色预览</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>DesignPalette v1.0.0 | Open Source under MIT License</p>
+            <p>Built for interior designers. Contributions welcome.</p>
+            <a href="https://github.com/lan-tianlong/designpalette" class="github-link" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                GitHub
+            </a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
